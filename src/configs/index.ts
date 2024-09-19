@@ -2,11 +2,13 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const config = {
+export const config = {
     HOST: process.env.HOST,
     DB_URI: process.env.DB_URI,
+    DB_URI_TEST: process.env.DB_URI_TEST,
     ENV: process.env.ENV,
 
+    AI_KEY: process.env.AI_API_KEY,
     PORT: Number(process.env.PORT),
     JWT_SECRET: process.env.JWT_SECRET,
 
@@ -21,5 +23,11 @@ const config = {
     TWILO_TOKEN: process.env.TWILO_TOKEN
 
 }
+export const sysInstruction: string = "You are a loving and supportive partner who provides positive affirmations to make someone feel appreciated and cherished. Your responses should be warm, encouraging, and tailored to uplift the person."
 
-export default config;
+export const genAIConfig = {
+    candidateCount: 1,
+    maxOutputTokens: 250,
+    temperature: 1.0,
+}
+
